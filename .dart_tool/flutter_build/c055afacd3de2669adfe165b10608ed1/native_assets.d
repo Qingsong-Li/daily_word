@@ -1,0 +1,1 @@
+ /Users/liqingsong/Desktop/Github/daily_word/.dart_tool/flutter_build/c055afacd3de2669adfe165b10608ed1/native_assets.yaml: 

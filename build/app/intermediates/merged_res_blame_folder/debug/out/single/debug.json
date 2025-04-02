@@ -1,26 +1,46 @@
 [
     {
-        "merged": "com.example.dailyword.app-merged_res-41:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.dailyword.app-main-36:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.example.dailyword.app-merged_res-41:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.example.dailyword.app-main-36:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.dailyword.app-merged_res-41:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.dailyword.app-main-36:/drawable-v21/launch_background.xml"
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.dailyword.app-merged_res-41:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.dailyword.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-ldpi_ic_launcher.png.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-ldpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.dailyword.app-merged_res-41:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.example.dailyword.app-main-36:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-pngs-37:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.dailyword.app-merged_res-41:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.example.dailyword.app-main-36:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/drawable-v21_launch_background.xml.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-merged_res-41:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/liqingsong/.gradle/daemon/8.3/com.example.dailyword.app-main-36:/mipmap-mdpi/ic_launcher.png"
     }
 ]

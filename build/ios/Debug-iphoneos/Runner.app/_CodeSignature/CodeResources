@@ -18,7 +18,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		eukkkymW9DpgqIrt2jOQeatsfLs=
+		AR+L2paAEMN9UH/NAIG459zzp4w=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		87qtfdHVCgU0zREdCQjS0KH93CI=
+		rWULSe7mDCZpHK6fsjiwxRFS59w=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		7m692suM6zl8DDDIBI73kXMX/lw=
+		8O5lkiPc5m8FhKJMv0WOyNlsqR8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -106,7 +106,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		hJ7arsJg4TPwiG5sMfDz6HDRXkE=
+		jYvssh8cTQbygxQ3rTCU/+/7BXE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/Flutter.framework/Flutter</key>
 		<data>
-		8g77NaAYtiozz57gyP0fftAFV8k=
+		1BIAOGT05ZieeT96vUmscYKgyC8=
 		</data>
 		<key>Frameworks/Flutter.framework/Headers/Flutter.h</key>
 		<data>
@@ -230,7 +230,7 @@
 		</data>
 		<key>Frameworks/fluttertoast.framework/fluttertoast</key>
 		<data>
-		qXxJOoBOMxMHjZqjQ915jalJDOo=
+		MwwKyAv/mCPmZdzZTxfYi79gBL4=
 		</data>
 		<key>Frameworks/fluttertoast.framework/fluttertoast_privacy.bundle/Info.plist</key>
 		<data>
@@ -250,7 +250,7 @@
 		</data>
 		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
 		<data>
-		9lYnJiWKDmw4FrRzw9bINonXtlg=
+		7rIBLCUzt53q3//nut/sm1wAE84=
 		</data>
 		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
 		<data>
@@ -262,7 +262,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ZewCL4cbX2DdqT20dJKu1vch6Ys=
+		bk77r+LTYTK5+lc5YPWs9IX1pHw=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -300,7 +300,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bFGQLN7iMDH9w+XDv6S8p7/odsAeUunHbzeWNYVg+gA=
+			CPdQK/B6MBPeJmmWSwsNNtgmC5SlwcJcvf4cylRV5Uw=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
@@ -349,7 +349,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EWOsdznS5/tcicGaF0gY5EOtueVduQus5MCunmNKB7k=
+			P7ScE2id/ts4OvPOzUaY3vawE5IZdMyYLRNEJYg3ors=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -363,7 +363,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nJk6UIE7tomUw2aWLBPcFEvw8vkzSGXALvk4+7uUT1U=
+			V2CiGn0pcLGiFvrWTdbpNbs6rYtek0WMM9mm0wSZpbU=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -454,7 +454,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QDtrAHlkZvTA3iHfi3djB9t7BfdgetBYNrBux/2lGec=
+			kcOdpdflVj6d4ElME2fW5vwRfLsaHdR6CTsXyVtuzNQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -496,7 +496,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9jhPCj3y5ptAIa/qOaAJSr81cYcgNkvtnWodpey6Qk4=
+			1r8CPAE24o8nKyFXct+iwE61IzVRIR6YyjCh06372Hk=
 			</data>
 		</dict>
 		<key>Frameworks/Flutter.framework/Headers/Flutter.h</key>
@@ -671,7 +671,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yk2VD3j/ZT6JUtrwsDhgMMDbd6ZisaaOJIGF2QnEeY0=
+			vUzIgg7714FQ0uMI/Dn+hQeuqBeZ7TM8ZatMENyJPzc=
 			</data>
 		</dict>
 		<key>Frameworks/fluttertoast.framework/fluttertoast_privacy.bundle/Info.plist</key>
@@ -706,7 +706,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IYIJFDQ8jgMygMaqS5IuIa+aaUX9QVKLVBMlY/8Fw68=
+			TQhVcRNdgcn4IABwvBYYH2yGSE3dJQuFLh+DSJGDi24=
 			</data>
 		</dict>
 		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation_privacy.bundle/Info.plist</key>
