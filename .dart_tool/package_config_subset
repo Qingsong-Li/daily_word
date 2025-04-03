@@ -46,6 +46,10 @@ file
 3.0
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/file-7.0.1/
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/file-7.0.1/lib/
+flutter_bloc
+2.12
+file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-8.1.6/
+file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-8.1.6/lib/
 flutter_lints
 3.1
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/flutter_lints-3.0.2/
@@ -98,6 +102,10 @@ meta
 2.12
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/meta-1.15.0/
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/meta-1.15.0/lib/
+nested
+2.12
+file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/nested-1.0.0/
+file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/nested-1.0.0/lib/
 path
 3.0
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/path-1.9.0/
@@ -134,6 +142,10 @@ plugin_platform_interface
 3.0
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/plugin_platform_interface-2.1.8/
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/plugin_platform_interface-2.1.8/lib/
+provider
+2.12
+file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/provider-6.1.4/
+file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/provider-6.1.4/lib/
 shared_preferences
 3.5
 file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.5.3/

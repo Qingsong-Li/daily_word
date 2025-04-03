@@ -1,13 +1,18 @@
+import 'package:dailyword/pages/xi_yu/xi_yu_cubit.dart';
+import 'package:dailyword/pages/xi_yu/xi_yu_state.dart';
 import 'package:dailyword/tools/data_base_helper.dart';
 import 'package:dailyword/widgets/base_page.dart';
 import 'package:flutter/material.dart';
+import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../widgets/my_top_bar.dart';
 import '../../widgets/word_card.dart';
 import '../../datas/word.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../../tools/keep_alive_wrapper.dart';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../tools/keep_alive_wrapper.dart';
 
 String token = "";
 
@@ -19,35 +24,11 @@ class XiYuPage extends StatefulWidget {
 }
 
 class _XiYuPageState extends State<XiYuPage> {
-  Word word = Word(
-      id: 1,
-      name: "name",
-      sound: "sound",
-      explanation: "explanation",
-      provenance: "provenance",
-      emotionalColor: "emotionalColor",
-      structure: "structure",
-      synonyms: "synonyms",
-      antonym: "antonym",
-      example: "example",
-      collected: 0);
-  DatabaseHelper dbHelper = DatabaseHelper();
+  final XiYuCubit _cubit = XiYuCubit();
 
   @override
   void initState() {
     super.initState();
-    initData();
-  }
-
-  void initData() async {
-    // await getToken();
-    // Word tempWord = await Word.getRandom(token);
-    // while (tempWord.name.length > 5) {
-    //   tempWord = await Word.getRandom(token);
-    // }
-    // setState(() {
-    //   word = tempWord;
-    // });
   }
 
   void refreshData() async {
@@ -55,9 +36,9 @@ class _XiYuPageState extends State<XiYuPage> {
     while (tempWord.name.length > 5) {
       tempWord = await Word.getRandom(token);
     }
-    setState(() {
-      word = tempWord;
-    });
+    // setState(() {
+    //   word = tempWord;
+    // });
   }
 
   Future<void> getToken() async {
@@ -68,57 +49,36 @@ class _XiYuPageState extends State<XiYuPage> {
   @override
   Widget build(BuildContext context) {
     return KeepAliveWrapper(
-        child: Scaffold(
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: 100),
-        child: FloatingActionButton(
-          onPressed: () async {
-            Map<String,dynamic> chengyu = await dbHelper.getChengyuByName("按兵不动") ?? {};
-            // print("查询成语：$chengyu");
-            setState(() {
-              word = Word.fromJson(chengyu);
-            });
-          },
-          child: const Icon(Icons.add),
-        ),
-      ),
-      body: BasePage(
-          child: Column(
-        children: [
-          SizedBox(
-            height: 75.h,
-          ),
-          const MyTopBar(
-              title: "习语",
-              leading: IconData(0xe649,
-                  fontFamily: "iconfont", matchTextDirection: true)),
-          word.name == ""
-              ? const SizedBox()
-              : GestureDetector(
-                  onLongPress: () {
-                    refreshData();
-                  },
-                  child: SizedBox(
-                    height: 570.h,
-                    child: WordCard(
-                      word: word,
-                      token: token,
-                    ),
-                  ),
-                ),
-          const SizedBox(
-            width: double.infinity,
-            child: Text(
-              "长按卡片刷新",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontFamily: "AlimamaShuHeiTi-Bold",
-                  fontSize: 16,
-                  color: Color.fromRGBO(235, 230, 192, 0.8)),
+        child: BlocProvider(
+      create: (_) => _cubit,
+      child: Scaffold(
+        body: BasePage(
+            child: Column(
+          children: [
+            SizedBox(
+              height: 75.h,
             ),
-          )
-        ],
-      )),
+            const MyTopBar(
+                title: "习语",
+                leading: IconData(0xe649,
+                    fontFamily: "iconfont", matchTextDirection: true)),
+            Expanded(
+                child: BlocBuilder<XiYuCubit, XiYuState>(
+                    builder: (_, state) => WordCard(word: state.word))),
+            const SizedBox(
+              width: double.infinity,
+              child: Text(
+                "长按卡片刷新",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontFamily: "AlimamaShuHeiTi-Bold",
+                    fontSize: 16,
+                    color: Color.fromRGBO(235, 230, 192, 0.8)),
+              ),
+            )
+          ],
+        )),
+      ),
     ));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BasePage extends StatelessWidget {
   final Widget child;
@@ -21,7 +22,13 @@ class BasePage extends StatelessWidget {
             begin: Alignment.bottomCenter,
           ),
         ),
-        child: child,
+        child: 
+        Column(
+          children: [
+            Expanded(child: child),
+            SizedBox(height: 100.h,)
+          ],
+        ),
       ),
     );
   }

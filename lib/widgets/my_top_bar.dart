@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../datas/user.dart';
 
 class MyTopBar extends StatelessWidget {
@@ -93,7 +94,7 @@ class MyTopBar extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, 0, 30, 0),
             child: IconButton(
               onPressed: () {
-                _alertDialog();
+                // _alertDialog();
               },
               icon: Icon(leading),
               iconSize: 42,
