@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
 import '../datas/word.dart';
 import 'my_list_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class WordCard extends StatefulWidget {
   final String token;
   final Word word;
@@ -39,7 +39,7 @@ class _WordCardState extends State<WordCard> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   SizedBox(
+                  SizedBox(
                     width: 70.w,
                   ),
                   SizedBox(
@@ -53,7 +53,7 @@ class _WordCardState extends State<WordCard> {
                             fontSize: 30,
                             color: Color.fromRGBO(66, 116, 128, 1))),
                   ),
-                   SizedBox(
+                  SizedBox(
                     width: 20.w,
                   ),
                   IconButton(
@@ -63,13 +63,13 @@ class _WordCardState extends State<WordCard> {
                         });
                       },
                       icon: Icon(
-                        IconData(widget.word.collected ? 0xeca6 : 0xe65e,
+                        IconData(widget.word.collected == 1 ? 0xeca6 : 0xe65e,
                             fontFamily: 'iconfont'),
                         size: 30.w,
                       ))
                 ],
               ),
-               SizedBox(
+              SizedBox(
                 height: 14.w,
               ),
               MyListTile(
@@ -82,8 +82,8 @@ class _WordCardState extends State<WordCard> {
                   title: getTitle(widget.word.provenance),
                   text: getBody(widget.word.provenance)),
               MyListTile(
-                  title: getTitle(widget.word.emotional_color),
-                  text: getBody(widget.word.emotional_color)),
+                  title: getTitle(widget.word.emotionalColor),
+                  text: getBody(widget.word.emotionalColor)),
               MyListTile(
                   title: getTitle(widget.word.structure),
                   text: getBody(widget.word.structure)),
@@ -128,22 +128,19 @@ class _WordCardState extends State<WordCard> {
       bool result = await Word.shouCang(word, token);
       setState(() {
         if (result == true) {
-          word.collected = true;
+          word.collected = 1;
         }
       });
-    }else{
+    } else {
       bool result = await Word.cancelShouCang(word, token);
       setState(() {
         if (result == true) {
-          word.collected = false;
+          word.collected = 0;
         }
       });
     }
   }
 }
-
-
-
 
 // class _WordCardState extends State<WordCard> {
 //   double touchx = 0;
