@@ -4,32 +4,63 @@ import 'package:http/http.dart' as http;
 import 'dart:convert'; // 用于处理 JSON 数据
 
 class Word {
-  late int id;
-  late String name;
-  late String sound;
-  late String explanation;
-  late String provenance;
-  // ignore: non_constant_identifier_names
-  late String emotional_color;
-  late String structure;
-  late String synonyms;
-  late String antonym;
-  late String example;
-  late bool collected;
-  Word._(
-      {required this.id,
-      required this.name,
-      required this.sound,
-      required this.explanation,
-      required this.provenance,
-      required this.emotional_color,
-      required this.structure,
-      required this.synonyms,
-      required this.antonym,
-      required this.example,
-      required this.collected});
+  int id;
+  String name;
+  String sound;
+  String explanation;
+  String provenance;
+  String emotionalColor;
+  String structure;
+  String synonyms;
+  String antonym;
+  String example;
+  int collected;
+  Word(
+      {this.id = -1,
+      this.name = "",
+      this.sound = "",
+      this.explanation = "",
+      this.provenance = "",
+      this.emotionalColor = "",
+      this.structure = "",
+      this.synonyms = "",
+      this.antonym = "",
+      this.example = "",
+      this.collected = 0});
 
-  Word.empty() : name = "";
+  // 从 JSON 转换为 Word 对象
+  factory Word.fromJson(Map<String, dynamic> json) {
+    return Word(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      sound: json['sound'] as String,
+      explanation: json['explanation'] as String,
+      provenance: json['provenance'] as String,
+      emotionalColor: json['emotional_color'] as String,
+      structure: json['structure'] as String,
+      synonyms: json['synonyms'] as String,
+      antonym: json['antonym'] as String,
+      example: json['example'] as String,
+      collected: (json['collected'] ?? 0) as int, // SQLite 中 `BOOLEAN` 常用 0/1 表示
+    );
+  }
+
+  // 将 Word 对象转换为 JSON
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'sound': sound,
+      'explanation': explanation,
+      'provenance': provenance,
+      'emotional_color': emotionalColor,
+      'structure': structure,
+      'synonyms': synonyms,
+      'antonym': antonym,
+      'example': example,
+      'collected': collected, // SQLite 兼容性处理
+    };
+  }
 
   static Future<Word> getRandom(String token) async {
     late int id;
@@ -43,7 +74,7 @@ class Word {
     late String synonyms;
     late String antonym;
     late String example;
-    late bool collected;
+    late int collected;
 
     var data;
     token = token.replaceAll('"', ''); // 去掉双引号
@@ -80,19 +111,19 @@ class Word {
           "Authorization": Authorization
         });
     if (response1.statusCode == 200) {
-      collected = response2.body == "true" ? true : false;
+      collected = response2.body == "true" ? 1 : 0;
     } else {
       print(response2.body);
       data = 'Failed to load data';
     }
 
-    return Word._(
+    return Word(
         id: id,
         name: name,
         sound: sound,
         explanation: explanation,
         provenance: provenance,
-        emotional_color: emotional_color,
+        emotionalColor: emotional_color,
         structure: structure,
         synonyms: synonyms,
         antonym: antonym,
@@ -112,7 +143,7 @@ class Word {
     late String synonyms;
     late String antonym;
     late String example;
-    late bool collected;
+    late int collected;
 
     var data;
     token = token.replaceAll('"', ''); // 去掉双引号
@@ -147,19 +178,19 @@ class Word {
           "Authorization": Authorization
         });
     if (response1.statusCode == 200) {
-      collected = response2.body == "true" ? true : false;
+      collected = response2.body == "true" ? 1 : 0;
     } else {
       print(response2.body);
       data = 'Failed to load data';
     }
 
-    return Word._(
+    return Word(
         id: id,
         name: name,
         sound: sound,
         explanation: explanation,
         provenance: provenance,
-        emotional_color: emotional_color,
+        emotionalColor: emotional_color,
         structure: structure,
         synonyms: synonyms,
         antonym: antonym,
@@ -200,7 +231,7 @@ class Word {
     if (response.statusCode == 200) {
       // ignore: unused_local_variable
       final jsonResponse = json.decode(response.body);
-      
+
       return true;
     } else {
       print("cancel collect error:" + response.body);
@@ -225,7 +256,6 @@ class Word {
     if (response.statusCode == 200) {
       final jsonResponse = json.decode(response.body);
       for (var data in jsonResponse) {
-        
         print(jsonResponse);
         // 获取每个元素中的属性值
         id = data["id"] ?? "";

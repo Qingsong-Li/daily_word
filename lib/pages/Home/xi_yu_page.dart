@@ -1,3 +1,4 @@
+import 'package:dailyword/tools/data_base_helper.dart';
 import 'package:dailyword/widgets/base_page.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/my_top_bar.dart';
@@ -18,7 +19,20 @@ class XiYuPage extends StatefulWidget {
 }
 
 class _XiYuPageState extends State<XiYuPage> {
-  Word word = Word.empty();
+  Word word = Word(
+      id: 1,
+      name: "name",
+      sound: "sound",
+      explanation: "explanation",
+      provenance: "provenance",
+      emotionalColor: "emotionalColor",
+      structure: "structure",
+      synonyms: "synonyms",
+      antonym: "antonym",
+      example: "example",
+      collected: 0);
+  DatabaseHelper dbHelper = DatabaseHelper();
+
   @override
   void initState() {
     super.initState();
@@ -55,6 +69,19 @@ class _XiYuPageState extends State<XiYuPage> {
   Widget build(BuildContext context) {
     return KeepAliveWrapper(
         child: Scaffold(
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: 100),
+        child: FloatingActionButton(
+          onPressed: () async {
+            Map<String,dynamic> chengyu = await dbHelper.getChengyuByName("按兵不动") ?? {};
+            // print("查询成语：$chengyu");
+            setState(() {
+              word = Word.fromJson(chengyu);
+            });
+          },
+          child: const Icon(Icons.add),
+        ),
+      ),
       body: BasePage(
           child: Column(
         children: [

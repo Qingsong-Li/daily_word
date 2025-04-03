@@ -8,6 +8,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/bloc-8.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/liqingsong/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -374,7 +380,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2025-04-03T03:53:37.370823Z",
+  "generated": "2025-04-03T06:33:23.319125Z",
   "generator": "pub",
   "generatorVersion": "3.6.0",
   "flutterRoot": "file:///Users/liqingsong/fvm/versions/stable",
