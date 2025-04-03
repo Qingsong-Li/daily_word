@@ -1,8 +1,8 @@
-import 'package:dailyword/widgets/base_page.dart';
+
 import 'package:flutter/material.dart';
-import 'xi_yu_page.dart';
-import 'yue_yu_page.dart';
-import 'cang_yu_page.dart';
+import '../xi_yu/xi_yu_page.dart';
+import '../yue_yu/yue_yu_page.dart';
+import '../cang_yu/cang_yu_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
