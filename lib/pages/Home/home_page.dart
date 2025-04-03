@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../xi_yu/xi_yu_page.dart';
 import '../yue_yu/yue_yu_page.dart';
@@ -14,10 +13,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = const [
     XiYuPage(),
-    YueYuPage(arguments: {}),
-    CangYuPage(
-      arguments: {},
-    ),
+    // YueYuPage(arguments: {}),
+    // CangYuPage(
+    //   arguments: {},
+    // ),
   ];
   late int _currentPage;
   @override
@@ -27,9 +26,9 @@ class _HomePageState extends State<HomePage> {
     // / Initialize cache with null values
   }
 
-  Widget _buildCangyuPage() {
-    return const CangYuPage(arguments: {});
-  }
+  // Widget _buildCangyuPage() {
+  //   return const CangYuPage(arguments: {});
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             data: ThemeData(
               brightness: Brightness.light,
               splashColor: Colors.transparent,
-              highlightColor: Colors.transparent, 
+              highlightColor: Colors.transparent,
             ),
             child: BottomNavigationBar(
               currentIndex: _currentPage,
@@ -59,9 +58,9 @@ class _HomePageState extends State<HomePage> {
               type: BottomNavigationBarType.fixed,
               elevation: 0,
               onTap: (value) {
-                setState(() {
-                  _currentPage = value;
-                });
+                // setState(() {
+                //   _currentPage = value;
+                // });
               },
               items: const [
                 BottomNavigationBarItem(

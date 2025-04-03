@@ -4,9 +4,8 @@ import 'my_list_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WordCard extends StatefulWidget {
-  final String token;
   final Word word;
-  const WordCard({super.key, required this.word, required this.token});
+  const WordCard({super.key, required this.word});
 
   @override
   State<WordCard> createState() => _WordCardState();
@@ -17,7 +16,6 @@ class _WordCardState extends State<WordCard> {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-      height: 530.w,
       width: 333.w,
       decoration:
           BoxDecoration(borderRadius: BorderRadius.circular(28), boxShadow: [
@@ -58,9 +56,7 @@ class _WordCardState extends State<WordCard> {
                   ),
                   IconButton(
                       onPressed: () {
-                        setState(() {
-                          shouCang(widget.word, widget.token);
-                        });
+            
                       },
                       icon: Icon(
                         IconData(widget.word.collected == 1 ? 0xeca6 : 0xe65e,
@@ -123,23 +119,23 @@ class _WordCardState extends State<WordCard> {
     return colonIndex + 1 < input.length ? input.substring(colonIndex + 1) : '';
   }
 
-  void shouCang(Word word, String token) async {
-    if (word.collected == false) {
-      bool result = await Word.shouCang(word, token);
-      setState(() {
-        if (result == true) {
-          word.collected = 1;
-        }
-      });
-    } else {
-      bool result = await Word.cancelShouCang(word, token);
-      setState(() {
-        if (result == true) {
-          word.collected = 0;
-        }
-      });
-    }
-  }
+  // void shouCang(Word word, String token) async {
+  //   if (word.collected == false) {
+  //     bool result = await Word.shouCang(word, token);
+  //     setState(() {
+  //       if (result == true) {
+  //         word.collected = 1;
+  //       }
+  //     });
+  //   } else {
+  //     bool result = await Word.cancelShouCang(word, token);
+  //     setState(() {
+  //       if (result == true) {
+  //         word.collected = 0;
+  //       }
+  //     });
+  //   }
+  // }
 }
 
 // class _WordCardState extends State<WordCard> {

@@ -41,7 +41,8 @@ class Word {
       synonyms: json['synonyms'] as String,
       antonym: json['antonym'] as String,
       example: json['example'] as String,
-      collected: (json['collected'] ?? 0) as int, // SQLite 中 `BOOLEAN` 常用 0/1 表示
+      collected:
+          (json['collected'] ?? 0) as int, // SQLite 中 `BOOLEAN` 常用 0/1 表示
     );
   }
 
@@ -318,3 +319,16 @@ class Word {
     return result;
   }
 }
+
+final Word DEFAULTWORD = Word(
+    id: -1,
+    name: "空空如也",
+    sound: "成语发音：kōng kōng rú yě",
+    explanation: "成语解释：（空空如：虚心的样子）形容一无所知，也用来形容一无所有。",
+    provenance: "成语出处：春秋·孔子《论语·子罕》：“有鄙夫问于我，空空如也，我叩其两端而竭焉。”",
+    emotionalColor: "感情色彩：中性成语",
+    structure: "成语结构：单纯式成语",
+    synonyms: "近义词：空洞无物",
+    antonym: "",
+    example: "成语例句：明·冯梦龙《东周列国志》六六回：“比入由堂，直望内室，窗户门闼，空空如也”",
+    collected: 0);
