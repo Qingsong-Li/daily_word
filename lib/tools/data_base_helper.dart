@@ -81,4 +81,13 @@ class DatabaseHelper {
     Database db = await database;
     return await db.delete(tableChengyu, where: "id = ?", whereArgs: [id]);
   }
+
+  /// **随机获取一条成语**
+  Future<Map<String, dynamic>?> getRandomChengyu() async {
+    Database db = await database;
+    List<Map<String, dynamic>> results =
+        await db.query(tableChengyu, orderBy: "RANDOM()", limit: 1);
+
+    return results.isNotEmpty ? results.first : null;
+  }
 }

@@ -29,16 +29,7 @@ class _XiYuPageState extends State<XiYuPage> {
   @override
   void initState() {
     super.initState();
-  }
-
-  void refreshData() async {
-    Word tempWord = await Word.getRandom(token);
-    while (tempWord.name.length > 5) {
-      tempWord = await Word.getRandom(token);
-    }
-    // setState(() {
-    //   word = tempWord;
-    // });
+    _cubit.initWord();
   }
 
   Future<void> getToken() async {
@@ -64,7 +55,12 @@ class _XiYuPageState extends State<XiYuPage> {
                     fontFamily: "iconfont", matchTextDirection: true)),
             Expanded(
                 child: BlocBuilder<XiYuCubit, XiYuState>(
-                    builder: (_, state) => WordCard(word: state.word))),
+                    builder: (_, state) => GestureDetector(
+                          onLongPress: () {
+                            _cubit.refreshWord();
+                          },
+                          child: WordCard(word: state.word),
+                        ))),
             const SizedBox(
               width: double.infinity,
               child: Text(
