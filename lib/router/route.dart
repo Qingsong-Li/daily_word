@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import '../pages/Home/home_page.dart';
-import '../pages/start_page.dart';
-import '../pages/User/login.dart';
+import '../pages/home/home_page.dart';
+import '../pages/home/start_page.dart';
+import '../pages/user/login.dart';
 
 final Map<String, Function> routes = {
   '/startpage': (contxt, {arguments}) => const StartPage(),
