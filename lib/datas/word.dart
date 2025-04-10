@@ -101,7 +101,6 @@ class Word {
       antonym = data["antonym"] ?? "";
       example = data["example"] ?? "";
     } else {
-      print(response1.body);
       data = 'Failed to load data';
     }
 
@@ -114,7 +113,6 @@ class Word {
     if (response1.statusCode == 200) {
       collected = response2.body == "true" ? 1 : 0;
     } else {
-      print(response2.body);
       data = 'Failed to load data';
     }
 
@@ -181,7 +179,6 @@ class Word {
     if (response1.statusCode == 200) {
       collected = response2.body == "true" ? 1 : 0;
     } else {
-      print(response2.body);
       data = 'Failed to load data';
     }
 
