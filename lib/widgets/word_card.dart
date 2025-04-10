@@ -55,9 +55,7 @@ class _WordCardState extends State<WordCard> {
                     width: 20.w,
                   ),
                   IconButton(
-                      onPressed: () {
-            
-                      },
+                      onPressed: () {},
                       icon: Icon(
                         IconData(widget.word.collected == 1 ? 0xeca6 : 0xe65e,
                             fontFamily: 'iconfont'),

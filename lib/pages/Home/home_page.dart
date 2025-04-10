@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = const [
     XiYuPage(),
-    // YueYuPage(arguments: {}),
+    YueYuPage(arguments: {}),
     // CangYuPage(
     //   arguments: {},
     // ),
@@ -34,11 +34,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
+        resizeToAvoidBottomInset: false,
         body: IndexedStack(
           index: _currentPage,
           children: [
             _pages[0],
-            // _pages[1],
+            _pages[1],
             // _buildCangyuPage()
           ],
         ),
@@ -58,9 +59,9 @@ class _HomePageState extends State<HomePage> {
               type: BottomNavigationBarType.fixed,
               elevation: 0,
               onTap: (value) {
-                // setState(() {
-                //   _currentPage = value;
-                // });
+                setState(() {
+                  _currentPage = value;
+                });
               },
               items: const [
                 BottomNavigationBarItem(
@@ -78,14 +79,14 @@ class _HomePageState extends State<HomePage> {
                 //       IconData(0xe61e, fontFamily: "iconfont"),
                 //     ),
                 //     label: ''),
-                BottomNavigationBarItem(
-                    icon: Icon(
-                      IconData(
-                        0xe615,
-                        fontFamily: "iconfont",
-                      ),
-                    ),
-                    label: '')
+                // BottomNavigationBarItem(
+                //     icon: Icon(
+                //       IconData(
+                //         0xe615,
+                //         fontFamily: "iconfont",
+                //       ),
+                //     ),
+                //     label: '')
               ],
             )));
   }
