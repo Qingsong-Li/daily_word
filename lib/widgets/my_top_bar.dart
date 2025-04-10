@@ -46,7 +46,6 @@ class MyTopBar extends StatelessWidget {
                           color: Color.fromRGBO(235, 230, 192, 0.8)),
                     ),
                     onPressed: () {
-                      print("取消");
                       Navigator.pop(context, 'Cancle');
                     },
                   ),
@@ -63,7 +62,6 @@ class MyTopBar extends StatelessWidget {
                           color: Color.fromRGBO(235, 230, 192, 0.8)),
                     ),
                     onPressed: () {
-                      print("确定");
                       User.logout();
                       Navigator.pushNamedAndRemoveUntil(
                           context, '/startpage', (route) => false);
@@ -73,7 +71,6 @@ class MyTopBar extends StatelessWidget {
               ],
             );
           });
-      print(result);
     }
 
     return SizedBox(

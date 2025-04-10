@@ -34,33 +34,37 @@ class _WordCardState extends State<WordCard> {
           child: ListView(
             padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Stack(
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: 70.w,
+                  Align(
+                    alignment: Alignment.center,
+                    child: SizedBox(
+                      height: 40,
+                      child: Text(widget.word.name,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                              fontFamily:
+                                  "Alibaba_PuHuiTi_2.0_65_Medium_65_Medium",
+                              fontSize: 30,
+                              color: Color.fromRGBO(66, 116, 128, 1))),
+                    ),
                   ),
-                  SizedBox(
-                    width: 150.w,
-                    child: Text(widget.word.name,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontFamily:
-                                "Alibaba_PuHuiTi_2.0_65_Medium_65_Medium",
-                            fontSize: 30,
-                            color: Color.fromRGBO(66, 116, 128, 1))),
-                  ),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        IconData(widget.word.collected == 1 ? 0xeca6 : 0xe65e,
-                            fontFamily: 'iconfont'),
-                        size: 30.w,
-                      ))
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: SizedBox(
+                      height: 40,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: Icon(
+                          IconData(widget.word.collected == 1 ? 0xeca6 : 0xe65e,
+                              fontFamily: 'iconfont'),
+                          size: 30.w,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
               SizedBox(

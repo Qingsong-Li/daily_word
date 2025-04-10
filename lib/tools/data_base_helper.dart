@@ -58,11 +58,26 @@ class DatabaseHelper {
 
   /// **模糊查询成语**
   Future<List<Map<String, dynamic>>> searchChengyu(String keyword) async {
-    Database db = await database;
-    return await db.query(
-      tableChengyu, where: "LENGTH(name) <= ? AND name LIKE ?",
-      whereArgs: [6, '%$keyword%'], // 确保 name 至少有 2 个字符
+    final Database db = await database;
+
+    final List<Map<String, dynamic>> results = await db.query(
+      tableChengyu,
+      where: "LENGTH(name) <= ? AND name LIKE ?",
+      whereArgs: [6, '%$keyword%'],
     );
+
+    // 如果结果为空，返回一条默认成语数据（比如 name = '井底之蛙'）
+    if (results.isEmpty) {
+      final List<Map<String, dynamic>> defaultResult = await db.query(
+        tableChengyu,
+        where: "name = ?",
+        whereArgs: ['空空如也'], // 替换为你希望设为默认的成语
+        limit: 1,
+      );
+      return defaultResult;
+    }
+
+    return results;
   }
 
   /// **插入一个新的成语**
