@@ -3,6 +3,6 @@
 .fvm/
 .idea/
 .vscode/
-.build/
+build/
 .dart_tool/
 .DS_Store
