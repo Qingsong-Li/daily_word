@@ -1,3 +1,8 @@
 
 # FVM Version Cache
 .fvm/
+.idea/
+.vscode/
+.build/
+.dart_tool/
+.DS_Store
