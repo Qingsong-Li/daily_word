@@ -50,7 +50,7 @@ class _YueYuPageState extends State<YueYuPage> with TickerProviderStateMixin {
                   Visibility(
                       visible: !state.isFocused && state.searchText.isNotEmpty && !state.showResult,
                       replacement: const SizedBox(
-                        height: 20,
+                        height: 0,
                       ),
                       child: const SizedBox(
                         height: 20,

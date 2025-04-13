@@ -27,9 +27,8 @@ class _XiYuPageState extends State<XiYuPage> {
 
   @override
   Widget build(BuildContext context) {
-    return KeepAliveWrapper(
-        child: BlocProvider(
-      create: (_) => _cubit,
+    return BlocProvider.value(
+      value: _cubit,
       child: Scaffold(
         body: BasePage(
             child: Column(
@@ -51,6 +50,7 @@ class _XiYuPageState extends State<XiYuPage> {
                         ))),
             const SizedBox(
               width: double.infinity,
+              height: 20,
               child: Text(
                 "长按卡片刷新",
                 textAlign: TextAlign.center,
@@ -63,6 +63,6 @@ class _XiYuPageState extends State<XiYuPage> {
           ],
         )),
       ),
-    ));
+    );
   }
 }

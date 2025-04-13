@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class YueYuCubit extends Cubit<YueYuState> {
-  YueYuCubit() : super(YueYuState());
+  YueYuCubit._internal() : super(YueYuState());
+  static final _instance = YueYuCubit._internal();
+
+  factory YueYuCubit() => _instance;
+
   late final FocusNode focusNode;
   //控制搜索框的消失
   late final AnimationController _controller1;
@@ -109,5 +113,12 @@ class YueYuCubit extends Cubit<YueYuState> {
 
     emit(state.copy(
         isFocused: false, showResult: false, searchText: "", results: []));
+  }
+
+  void checkUpdate() async {
+    if (state.showResult == true) {
+      var results = await _search();
+      emit(state.copy(results: results));
+    }
   }
 }

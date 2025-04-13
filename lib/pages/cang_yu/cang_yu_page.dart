@@ -85,7 +85,7 @@
 //                   height: 570.h,
 //                   child: WordCard(
 //                     word: collectWordList[selectIndex],
-//                     token: token,
+                  
 //                   ),
 //                 )
 //               : SizedBox(

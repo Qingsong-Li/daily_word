@@ -1,3 +1,4 @@
+import 'package:dailyword/tools/data_base_helper.dart';
 import 'package:flutter/material.dart';
 import '../datas/word.dart';
 import 'my_list_tile.dart';
@@ -53,14 +54,19 @@ class _WordCardState extends State<WordCard> {
                   ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: SizedBox(
-                      height: 40,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Icon(
-                          IconData(widget.word.collected == 1 ? 0xeca6 : 0xe65e,
-                              fontFamily: 'iconfont'),
-                          size: 30.w,
+                    child: GestureDetector(
+                      onTap: () {
+                        clickLike();
+                      },
+                      child: SizedBox(
+                        height: 40,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: Icon(
+                            IconData(widget.word.isLike == 1 ? 0xeca6 : 0xe65e,
+                                fontFamily: 'iconfont'),
+                            size: 30.w,
+                          ),
                         ),
                       ),
                     ),
@@ -121,23 +127,14 @@ class _WordCardState extends State<WordCard> {
     return colonIndex + 1 < input.length ? input.substring(colonIndex + 1) : '';
   }
 
-  // void shouCang(Word word, String token) async {
-  //   if (word.collected == false) {
-  //     bool result = await Word.shouCang(word, token);
-  //     setState(() {
-  //       if (result == true) {
-  //         word.collected = 1;
-  //       }
-  //     });
-  //   } else {
-  //     bool result = await Word.cancelShouCang(word, token);
-  //     setState(() {
-  //       if (result == true) {
-  //         word.collected = 0;
-  //       }
-  //     });
-  //   }
-  // }
+  void clickLike() async {
+    setState(() {
+      widget.word.isLike = widget.word.isLike == 0 ? 1 : 0;
+    });
+
+    DatabaseHelper dbHelper = DatabaseHelper();
+    dbHelper.updateChengyu(widget.word.toJson());
+  }
 }
 
 // class _WordCardState extends State<WordCard> {

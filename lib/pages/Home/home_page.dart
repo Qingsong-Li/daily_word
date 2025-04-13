@@ -1,7 +1,13 @@
+import 'package:dailyword/pages/xi_yu/xi_yu_cubit.dart';
+import 'package:dailyword/pages/yue_yu/yue_yu_cubit.dart';
+import 'package:dailyword/tools/keep_alive_wrapper.dart';
 import 'package:flutter/material.dart';
 import '../xi_yu/xi_yu_page.dart';
 import '../yue_yu/yue_yu_page.dart';
 import '../cang_yu/cang_yu_page.dart';
+
+const int XiYuPageIndex = 0;
+const int YueYuPageIndex = 1;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,31 +18,52 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = const [
-    XiYuPage(),
-    YueYuPage(),
-    // CangYuPage(
-    //   arguments: {},
-    // ),
+    KeepAliveWrapper(child: XiYuPage()),
+    KeepAliveWrapper(child: YueYuPage()),
   ];
   late int _currentPage;
+  late final PageController _pageController;
+  late final XiYuCubit _xiyuCubit;
+  late final YueYuCubit _yueyuCubit;
+
+
   @override
   void initState() {
     super.initState();
     _currentPage = 0;
-    // / Initialize cache with null values
+    _pageController = PageController();
+    _xiyuCubit = XiYuCubit();
+    _yueyuCubit = YueYuCubit();
   }
 
-  // Widget _buildCangyuPage() {
-  //   return const CangYuPage(arguments: {});
-  // }
+  @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
         resizeToAvoidBottomInset: false,
-        body: IndexedStack(
-          index: _currentPage,
+        body: PageView(
+          controller: _pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          onPageChanged: (index) {
+            setState(() {
+              _currentPage = index;
+            });
+            switch(index){
+              case XiYuPageIndex:
+              _xiyuCubit.checkUpdate();
+              break;
+              case YueYuPageIndex:
+              _yueyuCubit.checkUpdate();
+              break;
+
+            }
+          },
           children: [
             _pages[0],
             _pages[1],
@@ -59,9 +86,7 @@ class _HomePageState extends State<HomePage> {
               type: BottomNavigationBarType.fixed,
               elevation: 0,
               onTap: (value) {
-                setState(() {
-                  _currentPage = value;
-                });
+                _pageController.jumpToPage(value);
               },
               items: const [
                 BottomNavigationBarItem(
